@@ -7,7 +7,7 @@ Create a Python function that updates a user access file by removing users who n
 <h2>Project Overview</h2>
 In this project, I simulate the role of a security analyst at a hospital who is responsible for maintaining a list of employees authorized to access sensitive patient information (SPII). Access is determined by a list of allowed IP addresses. The script reads from an existing file of authorized users, compares it with a "remove list," and automatically updates the file by adding or removing users accordingly.
 
-<h2>Steps</h2>
+<h2>Steps: Creating the Script</h2>
 
 <h3>Step 1 - Define Function <code>update_file(import_file, remove_list)</code></h3>
 <p>
