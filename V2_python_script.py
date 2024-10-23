@@ -1,25 +1,30 @@
+# Updated Code (Simplified and Improved)
+
 def update_file(import_file, remove_list):
-    # Open the file in read mode and read its content
     with open(import_file, "r") as file:
-        ip_addresses = file.read()  # Read the content of the file containing IP addresses
+        ip_addresses = file.read().split()  # Read and split IP addresses into a list
     
-    # Split the file content into individual IP addresses based on whitespace
-    ip_addresses = ip_addresses.split()  # Split the content into individual IP addresses
+    # Use list comprehension to filter out IPs that are in remove_list
+    ip_addresses = [ip for ip in ip_addresses if ip not in remove_list]
     
-    # Use list comprehension to filter out the IP addresses that need to be removed
-    ip_addresses = [ip for ip in ip_addresses if ip not in remove_list]  # Create a new list excluding IPs in remove_list
-    
-    # Join the updated list of IP addresses into a single string with spaces between each IP address
-    ip_addresses = " ".join(ip_addresses)  # Join the IP addresses back into a single string
-    
-    # Open the file in write mode and write the updated content back to the file
+    # Write the updated list of IP addresses back to the file
     with open(import_file, "w") as file:
-        file.write(ip_addresses)  # Write the updated list back to the file
+        file.write(" ".join(ip_addresses))  # Join IP addresses into a single string and write back
+
+# Calling the function with specified arguments
+import_file = 'allowed_list.txt'
+remove_list = ["192.168.25.60", "192.168.140.81", "192.168.203.198"]
+
+update_file(import_file, remove_list)
+
+# Reading and printing the updated file content
+with open(import_file, "r") as file:
+    text = file.read()
+
+print(text)
 
 # Explanation:
-# - The function `update_file` takes in two arguments: `import_file`, which is the file containing IP addresses, and `remove_list`, which contains IP addresses to be removed.
-# - The file is opened in read mode, and its content is read into the variable `ip_addresses`.
-# - The `split()` method is used to break the content into a list of individual IP addresses.
-# - The code uses list comprehension to create a new list of IP addresses, excluding any addresses found in the `remove_list`.
-# - The list of IP addresses is joined back into a single string, with each IP separated by a space.
-# - Finally, the file is opened in write mode, and the updated list of IP addresses is written back to the file.
+# - The function `update_file` takes two arguments: `import_file`, which is the file containing IP addresses, and `remove_list`, which contains IPs to be removed.
+# - The file is opened in read mode, and its content is read and split into individual IP addresses.
+# - List comprehension is used to create a new list that excludes any IPs found in `remove_list`.
+# - The updated list of IP addresses is joined back into a single string and written back to the file.
