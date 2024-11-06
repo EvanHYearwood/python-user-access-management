@@ -7,6 +7,12 @@ Create a Python function that updates a user access file by removing users who n
 <h2>Project Overview</h2>
 In this project, I simulate the role of a security analyst at a hospital who is responsible for maintaining a list of employees authorized to access sensitive patient information (SPII). Access is determined by a list of allowed IP addresses. The script reads from an existing file of authorized users, compares it with a "remove list," and automatically updates the file by adding or removing users accordingly.
 
+
+<p align="center" style="margin-top: 10px;">
+  <img src="https://github.com/user-attachments/assets/f2cb8cdb-3643-4144-a420-85d045f91633" alt="Image Description" width="400"/>
+</p>
+
+
 <h2>Steps: Creating the Script</h2>
 
 <h3>Step 1 - Define Function <code>update_file(import_file, remove_list)</code></h3>
@@ -14,9 +20,17 @@ In this project, I simulate the role of a security analyst at a hospital who is 
 The first step is to define the function <code>update_file()</code>. I am using two parameters: <code>import_file</code> and <code>remove_list</code>. These are the two important elements needed to remove any users who no longer have access.
 </p>
 
+<p align="center" style="margin-top: 10px;">
+  <img src="https://github.com/user-attachments/assets/5f2fb696-67c8-4d9c-ba6d-e682469b3a3f" alt="Image Description" width="400"/>
+</p>
+
 <h3>Step 2 - Open the file that contains the allow list</h3>
 <p>
 Using the <code>open()</code> function, I define two arguments: the variable <code>import_file</code> and the second argument, "r", signifying that I want the function to read the file. Then, I assign it to a variable called <code>file</code>.
+</p>
+
+<p align="center" style="margin-top: 10px;">
+  <img src="https://github.com/user-attachments/assets/7824d73c-fbe5-4edf-9839-60523cbcd960" alt="Image Description" width="400"/>
 </p>
 
 <h3>Step 3 - Read the file contents and convert them into a string</h3>
@@ -24,9 +38,18 @@ Using the <code>open()</code> function, I define two arguments: the variable <co
 Next, I create a new variable within my function called <code>ip_addresses</code>; this is essentially my list. I call the <code>.read()</code> method on the variable <code>file</code> to convert the file content into a string, allowing me to manipulate it further.
 </p>
 
+<p align="center" style="margin-top: 10px;">
+  <img src="https://github.com/user-attachments/assets/eea0e2a1-6d1e-41a8-95c4-6cfa8c7272d4" alt="Image Description" width="400"/>
+</p>
+
+
 <h3>Step 4 - Convert the string into a list</h3>
 <p>
 Now that the variable <code>ip_addresses</code> is a string, I can convert it into a list. I apply the <code>.split()</code> method to <code>ip_addresses</code>, which splits the string whenever it encounters whitespace, creating a list of IP addresses.
+</p>
+
+<p align="center" style="margin-top: 10px;">
+  <img src="https://github.com/user-attachments/assets/551f0df5-e79e-4849-8a22-1f9b27c94444" alt="Image Description" width="400"/>
 </p>
 
 <h3>Step 5 - Iterate through the remove list</h3>
@@ -34,9 +57,17 @@ Now that the variable <code>ip_addresses</code> is a string, I can convert it in
 I create a loop that goes through each item in <code>ip_addresses</code>. Using <code>for element in ip_addresses:</code>, I set up the loop to check each IP address.
 </p>
 
+<p align="center" style="margin-top: 10px;">
+  <img src="https://github.com/user-attachments/assets/f446a2f0-8684-41c3-9fac-58042f488d1c" alt="Image Description" width="400"/>
+</p>
+
 <h3>Step 6 - Remove IP addresses that are on the remove list</h3>
 <p>
 For each IP address in <code>ip_addresses</code>, I check if it is in the <code>remove_list</code> using an <code>if</code> statement. If the IP matches one in the removal list, it is removed using the <code>.remove()</code> method.
+</p>
+
+<p align="center" style="margin-top: 10px;">
+  <img src="https://github.com/user-attachments/assets/f57cc208-349c-43f7-8a26-95eb8ddfbfc7" alt="Image Description" width="400"/>
 </p>
 
 <h3>Step 7 - Update the file with the revised list of IP addresses</h3>
@@ -44,9 +75,17 @@ For each IP address in <code>ip_addresses</code>, I check if it is in the <code>
 I then combine the elements within <code>ip_addresses</code> back into a single string. I do this using the <code>.join()</code> method, separating each address with a space.
 </p>
 
+<p align="center" style="margin-top: 10px;">
+  <img src="https://github.com/user-attachments/assets/0aaf8c3a-e90c-41c5-90bb-dfd0d0e3b8f5" alt="Image Description" width="400"/>
+</p>
+
 <h3>Step 8 - Re-open the file and overwrite it</h3>
 <p>
 To finish updating the file, I open <code>import_file</code> again in write mode ("w"). Using the <code>.write()</code> method, I overwrite the file with the updated list of IP addresses.
+</p>
+
+<p align="center" style="margin-top: 10px;">
+  <img src="https://github.com/user-attachments/assets/9b63bb02-9876-4dbf-a614-c42e9816120d" alt="Image Description" width="400"/>
 </p>
 
 <h3>Step 9 - Assign variables and call the function</h3>
