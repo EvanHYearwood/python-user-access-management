@@ -1,6 +1,8 @@
 <h1 align="center">Python Algorithm for User Access Management</h1>
 This project demonstrates an algorithm developed in Python to manage a list of authorized users who have access to sensitive data based on IP addresses. The script automates the process of removing users who no longer have access and adding new users who now have access.<br/> 
 
+<h2>Evan H. Yearwood - Portfolio Project</h2>
+
 <h2>Objective</h2>
 Create a Python function that updates a user access file by removing users who no longer have access and adding those who now have access based on their IP addresses.
 
