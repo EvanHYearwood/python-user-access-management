@@ -92,6 +92,11 @@ To finish updating the file, I open <code>import_file</code> again in write mode
 <p>
 In this final step, I define two variables: <code>import_file</code> and <code>remove_list</code>. The <code>import_file</code> contains the file to be updated, while <code>remove_list</code> specifies the IP addresses to be removed. I then call the function <code>update_file(import_file, remove_list)</code>.
 </p>
+
+<p align="center" style="margin-top: 10px;">
+  <img src="https://github.com/user-attachments/assets/31e7fbdd-407d-4142-8fc9-8fbbb875efce" alt="Image Description" width="600"/>
+</p>
+
 <p>
 Finally, to verify that the function worked correctly, I re-open the updated file in read mode and print its contents. This allows me to visually confirm that the specified IP addresses have been removed.
 </p>
